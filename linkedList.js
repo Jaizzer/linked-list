@@ -10,4 +10,12 @@ class LinkedList {
         this.head = Node;
         this.tail = Node;
     }
+
+    append(Node) {
+        if (head === null) {
+            this.head = Node;
+        } else {
+            this.tail.nextNode = Node;
+        }
+    }
 }
