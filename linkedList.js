@@ -17,5 +17,6 @@ class LinkedList {
         } else {
             this.tail.nextNode = Node;
         }
+        this.tail = Node;
     }
 }
