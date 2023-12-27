@@ -96,16 +96,16 @@ class LinkedList {
         }
 
         // Traverse the linked list.
-        let nodeAtIndexI = this.head;
-        for (let i = 0; i <= this.size; i++) {
-            // Return true if current Node's value matches the value we are looking for.
-            if (nodeAtIndexI.value === value) {
+        let currentNode = this.head;
+        do {
+            // Find the last node.
+            if (currentNode.value === value) {
                 return true;
             }
-
             // Move to the next Node.
-            nodeAtIndexI = nodeAtIndexI.nextNode;
-        }
+            currentNode = currentNode.nextNode;
+        } while (currentNode !== null);
+
         return false;
     }
 }
