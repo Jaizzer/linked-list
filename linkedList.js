@@ -148,7 +148,7 @@ class LinkedList {
     }
 
     insertAt(Node, index) {
-        if (this.size !== 0 && index >= 0) {
+        if (this.size > index && index >= 0) {
             if (index === 0) {
                 // Node insertion at the beginning of the linked list.
                 this.prepend(Node);
@@ -173,7 +173,7 @@ class LinkedList {
     }
 
     removeAt(index) {
-        if (this.size !== 0 && index >= 0) {
+        if (this.size > index && index >= 0) {
             if (index === 0) {
                 // Node deletion at the beginning of the linked list.
                 // Update pointers.
