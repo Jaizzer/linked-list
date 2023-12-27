@@ -126,4 +126,26 @@ class LinkedList {
         } while (currentNode !== null);
         return null;
     }
+
+    toString() {
+        // Initialize stringified linked list.
+        let stringifiedLinkedList = '';
+
+        // Traverse the linked list.
+        let currentNode = this.head;
+        while (true) {
+            // Check if linked list end is already reached.
+            if (currentNode === null) {
+                stringifiedLinkedList += `null`;
+                break;
+            }
+            // Append current stringified Node.
+            stringifiedLinkedList += `(${currentNode.value}) -> `;
+
+            // Move to the next Node.
+            currentNode = currentNode.nextNode;
+        }
+        // Print the stringified linked list.
+        console.log(stringifiedLinkedList);
+    }
 }
