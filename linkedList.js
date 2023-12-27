@@ -55,10 +55,9 @@ class LinkedList {
         }
 
         // Traverse the linked list.
-        let nodeAtIndexI;
+        let nodeAtIndexI = this.head;
         for (let i = 0; i < index; i++) {
             if (i === 0) {
-                nodeAtIndexI = this.head;
             }
             // Move to the next node.
             nodeAtIndexI = nodeAtIndexI.nextNode;
@@ -97,11 +96,8 @@ class LinkedList {
         }
 
         // Traverse the linked list.
-        let nodeAtIndexI;
+        let nodeAtIndexI = this.head;
         for (let i = 0; i <= this.size; i++) {
-            if (i === 0) {
-                nodeAtIndexI = this.head;
-            }
             // Return true if current Node's value matches the value we are looking for.
             if (nodeAtIndexI.value === value) {
                 return true;
