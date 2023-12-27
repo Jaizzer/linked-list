@@ -98,14 +98,13 @@ class LinkedList {
         // Traverse the linked list.
         let currentNode = this.head;
         do {
-            // Find the last node.
+            // Find the value.
             if (currentNode.value === value) {
                 return true;
             }
             // Move to the next Node.
             currentNode = currentNode.nextNode;
         } while (currentNode !== null);
-
         return false;
     }
 }
