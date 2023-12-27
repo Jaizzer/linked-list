@@ -50,7 +50,7 @@ class LinkedList {
     }
 
     at(index) {
-        if (this.size === 0) {
+        if (this.size === 0 || index < 0) {
             return null;
         }
 
