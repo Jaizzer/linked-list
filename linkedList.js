@@ -107,4 +107,23 @@ class LinkedList {
         } while (currentNode !== null);
         return false;
     }
+
+    find(value) {
+        // Return null since the value wouldn't be contained in an empty linked list.
+        if (this.size === 0) {
+            return null;
+        }
+
+        // Traverse the linked list.
+        let currentNode = this.head;
+        do {
+            // Find the node that contains the value to look for.
+            if (currentNode.value === value) {
+                return currentNode;
+            }
+            // Move to the next Node.
+            currentNode = currentNode.nextNode;
+        } while (currentNode !== null);
+        return null;
+    }
 }
