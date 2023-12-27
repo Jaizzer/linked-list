@@ -63,4 +63,26 @@ class LinkedList {
         }
         return nodeAtIndexI;
     }
+
+    pop() {
+        if (this.size > 0) {
+            // Traverse the linked list until the Node before the tail is reached.
+            let nodeAtIndexI;
+            for (let i = 0; i < this.size - 1; i++) {
+                if (i === 0) {
+                    nodeAtIndexI = this.head;
+                }
+                // Move to the next node.
+                nodeAtIndexI = nodeAtIndexI.nextNode;
+            }
+            // Point the Node before the tail to null.
+            nodeAtIndexI.next = null;
+
+            // Replace the tail.
+            this.tail = nodeAtIndexI;
+
+            // Upate the linked list size.
+            this.size--;
+        }
+    }
 }
