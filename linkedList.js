@@ -46,4 +46,21 @@ class LinkedList {
         // Update linked list size.
         this.size++;
     }
+
+    at(index) {
+        if (this.size === 0) {
+            return null;
+        }
+
+        // Traverse the linked list.
+        let nodeAtIndexI;
+        for (let i = 0; i < index; i++) {
+            if (i === 0) {
+                nodeAtIndexI = this.head;
+            }
+            // Move to the next node.
+            nodeAtIndexI = nodeAtIndexI.nextNode;
+        }
+        return nodeAtIndexI;
+    }
 }
