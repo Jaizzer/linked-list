@@ -171,4 +171,35 @@ class LinkedList {
             }
         }
     }
+
+    removeAt(index) {
+        if (this.size !== 0 && index >= 0) {
+            if (index === 0) {
+                // Node deletion at the beginning of the linked list.
+                // Update pointers.
+                const temp = this.head;
+                this.head = this.head.nextNode;
+                temp.nextNode = null;
+
+                // Update linked list size.
+                this.size--;
+            } else if (index === this.size - 1) {
+                // Node deletion at the end of the linked list.
+                this.pop(); // .pop() already takes care of linked list size updating
+            } else {
+                // Node deletion at the middle of the linked list.
+                let nodeAtIndexI = this.head;
+                for (let i = 0; i < index - 1; i++) {
+                    nodeAtIndexI = nodeAtIndexI.nextNode;
+                }
+                // Update pointers to delete the Node.
+                const temp = nodeAtIndexI.nextNode;
+                nodeAtIndexI.nextNode = nodeAtIndexI.nextNode.nextNode;
+                temp.nextNode = null;
+
+                // Update linked list size.
+                this.size--;
+            }
+        }
+    }
 }
