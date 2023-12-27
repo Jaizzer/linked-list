@@ -85,4 +85,27 @@ class LinkedList {
             this.size--;
         }
     }
+
+    contains(value) {
+        // Return false since the value wouldn't be contained in an empty linked list.
+        if (this.size === 0) {
+            return false;
+        }
+
+        // Traverse the linked list.
+        let nodeAtIndexI;
+        for (let i = 0; i <= this.size; i++) {
+            if (i === 0) {
+                nodeAtIndexI = this.head;
+            }
+            // Return true if current Node's value matches the value we are looking for.
+            if (nodeAtIndexI.value === value) {
+                return true;
+            }
+
+            // Move to the next Node.
+            nodeAtIndexI = nodeAtIndexI.nextNode;
+        }
+        return false;
+    }
 }
