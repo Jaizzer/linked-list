@@ -57,8 +57,6 @@ class LinkedList {
         // Traverse the linked list.
         let nodeAtIndexI = this.head;
         for (let i = 0; i < index; i++) {
-            if (i === 0) {
-            }
             // Move to the next node.
             nodeAtIndexI = nodeAtIndexI.nextNode;
         }
