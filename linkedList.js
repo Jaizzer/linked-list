@@ -146,4 +146,29 @@ class LinkedList {
         // Print the stringified linked list.
         console.log(stringifiedLinkedList);
     }
+
+    insertAt(Node, index) {
+        if (this.size !== 0 && index >= 0) {
+            if (index === 0) {
+                // Node insertion at the beginning of the linked list.
+                this.prepend(Node);
+            } else if (index === this.size) {
+                // Node insertion at the end of the linked list.
+                this.append(Node);
+            } else {
+                // Node insertion at the middle of the linked list.
+                let nodeAtIndexI = this.head;
+                for (let i = 0; i < index - 1; i++) {
+                    nodeAtIndexI = nodeAtIndexI.nextNode;
+                }
+                // Update pointers to insert the new Node.
+                const temp = nodeAtIndexI.nextNode;
+                nodeAtIndexI.nextNode = Node;
+                Node.nextNode = temp;
+
+                // Update linked list size.
+                this.size++;
+            }
+        }
+    }
 }
