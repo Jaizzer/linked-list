@@ -69,22 +69,24 @@ class LinkedList {
     pop() {
         if (this.size > 0) {
             // Traverse the linked list until the Node before the tail is reached.
-            let nodeAtIndexI;
-            for (let i = 0; i < this.size - 1; i++) {
-                if (i === 0) {
-                    nodeAtIndexI = this.head;
+            let currentNode = this.head;
+            while (true) {
+                // Find the last node.
+                if (currentNode.nextNode.nextNode === null) {
+                    // Remove last node.
+                    currentNode.nextNode = null;
+
+                    // Change the tail to the new last Node.
+                    this.tail = currentNode;
+
+                    // Upate the linked list size.
+                    this.size--;
+
+                    break;
                 }
-                // Move to the next node.
-                nodeAtIndexI = nodeAtIndexI.nextNode;
+                // Move to the next Node.
+                currentNode = currentNode.nextNode;
             }
-            // Point the Node before the tail to null.
-            nodeAtIndexI.next = null;
-
-            // Replace the tail.
-            this.tail = nodeAtIndexI;
-
-            // Upate the linked list size.
-            this.size--;
         }
     }
 
