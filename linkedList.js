@@ -37,7 +37,7 @@ class LinkedList {
             this.tail = Node;
         } else {
             // Store current head to temp.
-            temp = this.head;
+            let temp = this.head;
 
             // Replace current head with new Node.
             this.head = Node;
