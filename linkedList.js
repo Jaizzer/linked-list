@@ -15,11 +15,16 @@ class LinkedList {
 
     append(Node) {
         if (this.head === null) {
+            // If the head is null, the linked las has no node, therefore the appended node should be the head.
             this.head = Node;
         } else {
+            // Point the current tail's next node pointer to the appended Node.
             this.tail.nextNode = Node;
         }
+        // Set the appended Node as the new tail.
         this.tail = Node;
+
+        // Update the linked list size.
         this.size++;
     }
 
@@ -38,6 +43,7 @@ class LinkedList {
             // Point new head to the former head.
             this.head.nextNode = temp;
         }
+        // Update linked list size.
         this.size++;
     }
 }
